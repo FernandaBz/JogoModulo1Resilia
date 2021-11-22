@@ -155,7 +155,7 @@ def lilith_riacho_1():
             print(f'{personagem1} escolheu a parte mais escura e ficou presa nos galhos aquáticos.\n'
                   'Ela não conseguirá encontrar Irlin no fundo do Riacho.')
             print('GAME OVER')
-            break
+            quit()
 
             condicao = False
         elif opcao.upper() == '2':
@@ -283,6 +283,7 @@ def argo_batalha_final():
         if opcao.upper() == '1':
             print('_____________ ')
             print('VENCE')
+            quit()
 
             condicao = False
         elif opcao.upper() == '2':
@@ -294,64 +295,23 @@ def argo_batalha_final():
             print('Opção inválida. Escolha um dos 2 CAMINHOS')
 
 
-def argo_cozinha_castelo_1():
-    print('CONTEXTO COZINHA CASTELO ARGO E ALIX \n')
-    print('CLIQUE [S] PARA SEGUIR')
-    print('+' * 50)
-
-    condicao = True
-    while condicao:
-        opcao = input('Digite a opção:  \n')
-        if opcao.upper() == 'S':
-            print()
-            print(argo_batalha_final())
-        elif opcao.upper() != 'S':
-            print('Opção inválida.')
-
-
-def argo_salao_castelo_1():
-    print ('CONTEXTO SALÃO CASTELO ARGO E LILITH \n')
-    print ('CLIQUE [S] PARA SEGUIR')
-    print('+' * 50)
-
-    condicao = True
-    while condicao:
-        opcao = input('Digite a opção:  \n')
-        if opcao.upper() == 'S':
-            print('ARGO SEGUE PARA ENCONTRAR ALIX.')
-            print(argo_cozinha_castelo_1())
-
-        elif opcao.upper() != 'S':
-            print('Opção inválida.')
-
-
 #Função riacho que chama outras funções
 def argo_final_castelo_1():
-    print('HISTÓRIA FASE UM E ESCOLHA DO QUE FAZER')
-    print('[1] SALÃO')
-    print('[2] COZINHA')
+    print(f'Argo chega ao castelo e segue para encontrar {personagem1} e sua irmã {personagem3}.')
     print('+' * 50)
+    print(f'{personagem2} encontra {personagem1} no Salão entrando por uma passagem secreta que só os amigos conhecem.\n'
+          f'Ele recebe as chaves azul e verde e vai encontrar sua irmã na cozinha do castelo.')
+    print('+' * 50)
+    print(f'{personagem2} encontra sua irmã {personagem3} na cozinha. Depois de um longo abraço, {personagem3} afirma que\n'
+          f'deve ficar ali para salvar seus pais. Então Argo recolhe as chaves que estão com ela e segue para a batalha final.')
 
-    condicao = True
-    while condicao:
-        opcao = input('Digite a opção:  \n')
-        if opcao.upper() == '1':
-            print(f'{personagem2} encontra {personagem1} no Salão entrando por uma passagem secreta que só os amigos conhecem.')
-            print(argo_salao_castelo_1())
-
-            condicao = False
-        elif opcao.upper() == '2':
-            print(f'{personagem2} encontra sua irmã {personagem3} na cozinha do castelo.')
-            print(argo_cozinha_castelo_1())
-
-        else:
-            print('Opção inválida. Escolha um dos 2 LUGARES')
-
+    print(input('CLIQUE ENTER PARA SEGUIR!'))
+    print (argo_batalha_final())
 
 #Função passa de fase e chama f castelo. Tb dá opção de sair do jogo.
 def castelo_apresentacao_argo ():
     print ('PARABÉNS! VOCÊ PASSOU DE FASE!')
-    print ('Seguir para a próxima fase?')
+    print ('Seguir para o Castelo?')
     print('[1] SIM, CONTINUAR.')
     print('[2] NÃO, ENCERRAR AQUI.')
 
@@ -370,62 +330,38 @@ def castelo_apresentacao_argo ():
 
 
 ############################################# Função ARGO fase DOIS ##################################################
-#Caso Argo não passe direto da fase vila dos elfos ele tem uma missão de ajuda a cumprir.
-#Essa função finaliza o jogo ou chama f seguinte
-def argo_ajuda_1():
-    print('Argo precisa fazer .........')
-    print('Qual caminho seguir? ')
-    print('[1] SEGUIR PARA DIREITA ......')
-    print('[2] SEGUIR PARA ESQUERDA ...... ')
-    print('+' * 50)
-
-    condicao = True
-    while condicao:
-        opcao = input('Digite a opção:  \n')
-        if opcao.upper() == '1':
-            print('conseguiu.')
-            print('+' * 50)
-            print(castelo_apresentacao_argo())
-
-            condicao = False
-        elif opcao.upper() == "2":
-            print('nao conseguiu.')
-            print('GAME OVER')
-            quit()
-
 #Função vila que chama outras funções
 def argo_vila_1():
-    print('HISTÓRIA FASE UM E ESCOLHA DO QUE FAZER')
-    print('[1] ESCOLHA_1')
-    print('[2] ESCOLHA_2')
-    print('[3] ESCOLHA_3')
+    print('Agora Argo chega a Vila dos Elfos. Ele sabe que terá que estar atento. Os elfos são antigos aliados do Rei Zoltar,\n'
+          'mas que agora vivem sua vida independente. Argo profura por Olit o Elfo mais antigo da vila. Os elfos então\n'
+          'decidem que se Argo acertar o caminho certo a seguir ele poderá falar com Olit:')
+
+    print('[1] ALTO DA MONTANHA DOS ELFOS')
+    print('[2] SEGUIR PELO VALE ENCANTADO')
     print('+' * 50)
 
     condicao = True
     while condicao:
         opcao = input('Digite a opção:  \n')
         if opcao.upper() == '1':
-            print('_____________ ')
-            rint('O QUE ACONTECEU COM ARGO (PERDEU O DESAFIO)')
+            print('QUE PENA, ESCOLHA ERRADA.')
             print('GAME OVER')
             quit()
 
             condicao = False
         elif opcao.upper() == '2':
-            print('_____________ ')
+            print('Pelo caminho do vale encantado Argo chega a uma casa isolada, lá está Olit.\n'
+                  'Ele lhe entrega a chave a Argo segue sua viagem.')
             print('O QUE ACONTECEU COM ARGO (VENCEU DESAFIO)')
             print(castelo_apresentacao_argo())
 
-        elif opcao.upper() == '3':
-            print('_____________ ')
-            print(argo_ajuda_1())
 
         else:
             print('Opção inválida. Escolha um dos 2 CAMINHOS')
-#Função passa de fase e chama f riacho. Tb dá opção de sair do jogo.
+#Função passa de fase e chama f vila dos elfos. Tb dá opção de sair do jogo.
 def vila_apresentacao ():
-    print ('PARABÉNS! VOCÊ PASSOU DE FASE!')
-    print ('Seguir para a próxima fase?')
+    print('PARABÉNS! VOCÊ PASSOU DE FASE!')
+    print('Seguir para Vila dos Elfos?')
     print('[1] SIM, CONTINUAR.')
     print('[2] NÃO, ENCERRAR AQUI.')
 
@@ -433,7 +369,7 @@ def vila_apresentacao ():
     while condicao:
         opcao = input('Digite a opção:  \n')
         if opcao.upper() == '1':
-            print(argo_final_castelo_1())
+            print(argo_vila_1())
 
             condicao = False
         elif opcao.upper() == '2':
@@ -446,23 +382,24 @@ def vila_apresentacao ():
 ############################################# Função ARGO fase UM ####################################################
 #Função vila que chama outras funções
 def argo_ferreiro_1():
-    print('HISTÓRIA NA FASE FERREIRO')
-    print('[1] ESCOLHA_1')
-    print('[2] ESCOLHA_2')
+    print('Argo encontra o Ferreiro no seu humilde casebre. O Ferreiro decide ajudá-lo, mas exige que Argo deixe ali sua espada\n'
+          'e siga sua saga até o Castelo sem ela. Como Argo deve prosseguir?')
+    print('[1] DAR SUA ESPADA EM TROCA DA CHAVE AMARELA')
+    print('[2] TOMAR A CHAVE A FORÇA, JÁ QUE O FERREIRO É VELHO E NÃO PODE SE DEFENDER')
     print('+' * 50)
 
     condicao = True
     while condicao:
         opcao = input('Digite a opção:  \n')
         if opcao.upper() == '1':
-            print('_____________ ')
-            print('O QUE ACONTECEU COM ARGO (VENCEU DESAFIO)')
-            print('CHAMAR FASE DOIS ARGO')
-            print (vila_apresentacao())
+                print('Mesmo cético das palavras do Ferreiro Argo decide pelo bem do Reino e deixa sua espada.\n'
+                      'Argo recebe a chave amarela e a guarda com todo cuidado. Agora ele seguirá para a vila em busca da\n'
+                      'chave vermelha.')
+                print (vila_apresentacao())
 
         elif opcao.upper() == "2":
-            print('_____________ ')
-            print('O QUE ACONTECEU COM ARGO (PERDEU O DESAFIO)')
+            print('Argo desconfia do Ferreiro e decide enfrentá-lo. Ele no entanto não esperava que o senhor fosse ainda tão forte.\n'
+                  'Acontece que com um único golpe o Ferreiro dá um golpe e destrói a chave amarela. Argo não conseguirá cumprir sua missão.')
             print('GAME OVER')
             quit()
 
@@ -474,7 +411,8 @@ def argo_fase_1 ():
     print('ARGO COMEÇARÁ SUA SAGA PELO FERREIRO.')
     print('+' * 50)
 
-    print('Argo segue para a casa do ferreiro. Ele é um antigo guerreiro que defendeu por muito tempo o Reino de Misar.\n')
+    print('Argo segue para a casa do ferreiro. Ele é um antigo guerreiro que defendeu por muito tempo o Reino de Misar.\n'
+          'Depois da morte de sua esposa o Ferreiro decidiu se isolar e viver de forma humilde.\n')
     print(argo_ferreiro_1())
 
 ############################################# Função ALIX fase FINAL #################################################
@@ -490,6 +428,7 @@ def alix_batalha_final():
         if opcao.upper() == '2':
             print('_____________ ')
             print('VENCE')
+            quit()
 
             condicao = False
         elif opcao.upper() == '1':
@@ -499,39 +438,6 @@ def alix_batalha_final():
 
         else:
             print('Opção inválida. Escolha um dos 2 CAMINHOS')
-
-
-def alix_estabulo_castelo_1():
-    print('CONTEXTO ESTÁBULO ALIX E ARGO \n')
-    print('CLIQUE [S] PARA SEGUIR')
-    print('+' * 50)
-
-    condicao = True
-    while condicao:
-        opcao = input('Digite a opção:  \n')
-        if opcao.upper() == 'S':
-            print('SEGUE PARA BATALHA FINAL')
-            print(alix_batalha_final())
-        elif opcao.upper() != 'S':
-            print('Opção inválida.')
-
-
-def alix_salao_castelo_1():
-    print('CONTEXTO SALÃO CASTELO ALIX E LILITH \n')
-    print('CLIQUE [S] PARA SEGUIR')
-    print('+' * 50)
-
-    condicao = True
-    while condicao:
-        opcao = input('Digite a opção:  \n')
-        if opcao.upper() == 'S':
-            print('ALIX SEGUE PARA ENCONTRAR ARGO.')
-            print(alix_estabulo_castelo_1())
-
-
-        elif opcao.upper() != 'S':
-            print('Opção inválida.')
-
 
 #Função passa de fase e chama f riacho. Tb dá opção de sair do jogo.
 def castelo_apresentacao_alix():
@@ -556,26 +462,14 @@ def castelo_apresentacao_alix():
 #Função vila que chama outras funções
 def alix_final_castelo_1():
     print('Alix precisa ')
-    print('[1] ESCOLHA_1 VENCE')
-    print('[2] ESCOLHA_2 MORRE')
     print('+' * 50)
-
-    condicao = True
-    while condicao:
-        opcao = input('Digite a opção:  \n')
-        if opcao.upper() == '2':
-            print('_____________ ')
-            print('O QUE ACONTECEU COM ALIX (VENCEU O JOGO)')
-
-            condicao = False
-        elif opcao.upper() == '1':
-            print('_____________ ')
-            print('O QUE ACONTECEU COM ALIX (PERDEU O DESAFIO)')
-            print('GAME OVER')
-
-
-        else:
-            print('VER O QUE FAZER AQUI')
+    print(f'{personagem3} encontra {personagem1} no Salão entrando por uma passagem secreta que só os amigos conhecem.')
+    print()
+    print(f'{personagem3} encontra sua irmão {personagem2} no estábulo.')
+    print('_____________ ')
+    print('_____________ ')
+    print(input('CLIQUE ENTER PARA SEGUIR!'))
+    print (alix_batalha_final())
 
 
 
@@ -591,7 +485,7 @@ def apresentacao_caverna():
     while condicao:
         opcao = input('Digite a opção:  \n')
         if opcao.upper() == '1':
-            print(castelo_apresentacao_alix())
+            print(alix_caverna_1())
 
             condicao = False
         elif opcao.upper() == '2':
@@ -604,56 +498,30 @@ def alix_caverna_1():
     print('ALIX FASE CAVERNA')
     print('[1] ESCOLHA_1 VENCE')
     print('[2] ESCOLHA_2 MORRE')
-    print('+' * 40)
-
-    condicao = True
-    while condicao:
-        opcao = input('Digite a opção:  \n')
-        if opcao.upper() == '2':
-            print('_____________ ')
-            print('O QUE ACONTECEU COM ALIX (VENCEU DESAFIO)')
-            print('CHAMAR FASE TRÊS ALIX')
-
-            condicao = False
-        elif opcao.upper() == '1':
-            print('_____________ ')
-            print('O QUE ACONTECEU COM ALIX (PERDEU O DESAFIO)')
-            print('GAME OVER')
-            quit()
-
-        else:
-            print('Opção inválida. Escolha um dos 2 CAMINHOS')
-
-############################################# Função ALIX fase UM ####################################################
-#Caso Alix não passe direto da fase vila dos elfos ele tem uma missão de ajuda a cumprir.
-#Essa função finaliza o jogo ou chama f seguinte
-def alix_ajuda_1():
-    print('Alix precisa fazer .........')
-    print('Qual caminho seguir? ')
-    print('[1] SEGUIR PARA DIREITA VENCE......')
-    print('[2] SEGUIR PARA ESQUERDA MORRE ...... ')
     print('+' * 50)
 
     condicao = True
     while condicao:
         opcao = input('Digite a opção:  \n')
         if opcao.upper() == '1':
-            print('conseguiu.')
-            print('+' * 50)
-            print(castelo_apresentacao_argo())
+            print('_____________ ')
+            print('O QUE ACONTECEU COM ALIX (VENCEU DESAFIO)')
+            print(castelo_apresentacao_alix())
 
             condicao = False
-        elif opcao.upper() == "2":
-            print('nao conseguiu.')
-            print('GAME OVER')
+        elif opcao.upper() == '2':
+            print('OK. SAINDO...')
             quit()
 
+        else:
+            print('Opção inválida. Escolha um dos 2 CAMINHOS')
+
+############################################# Função ALIX fase UM ####################################################
 #Função vila que chama outras funções
 def alix_mago_1():
-    print('ALIX FASE DO MAGO')
+    print(f'{personagem3} chega na casa do Mago e sente a presença de outra pessoa. ')
     print('[1] ESCOLHA_1 MORRE')
     print('[2] ESCOLHA_2 DESAFIO')
-    print('[3] ESCOLHA_3 VENCE')
     print('+' * 50)
 
     condicao = True
@@ -663,18 +531,13 @@ def alix_mago_1():
             print('_____________ ')
             print('O QUE ACONTECEU COM ALIX (PERDEU DESAFIO)')
             print('GAME OVER')
-            break
+            quit()
 
             condicao = False
-        elif opcao.upper() == '2':
-            print('_____________ ')
-            print('O QUE ACONTECEU COM ALIX ajuda desafio')
-            print(alix_ajuda_1())
-
-        elif opcao.upper() == "3":
+        elif opcao.upper() == "2":
             print('_____________ ')
             print('O QUE ACONTECEU COM ALIX (VENCEU O DESAFIO)')
-            print(alix_caverna_1())
+            print(apresentacao_caverna())
 
 
         else:
